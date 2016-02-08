@@ -4,6 +4,8 @@
 
 # Import required modules
 import msvcrt
+import BodyParts
+import Combat
 
 
 class Input:

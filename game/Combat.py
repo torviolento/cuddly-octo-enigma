@@ -5,52 +5,56 @@ import random
 Slime = BodyParts.SlimeBody("Slime")
 Hero = BodyParts.HumanoidBody("Hero")
 
-def damageCheck(mobA,partD): #TODO: refine the formula for dmg, add luck as positive random factor
-    dmgRoll = random.randint(1,20)
-    endrRoll = random.randint(1,20)
-    dmg = ((dmgRoll/10)*mobA.strength)/endrRoll
-    partD.setHP(partD.hp-dmg)
-    print(mobA.name+" deals "+str(dmg)+" damage!")
-pass
-
-def attackCheck(mobA,mobD): #TODO: refine the formula to take into account aiming to a certain body part or making certain body parts non-targetable
-    return mobD.parts[random.randint(0,len(mobD.parts)-1)] #Chooses a random part from the list of all parts to target
-
-pass
+# TODO: refine the formula for dmg, add luck as positive random factor
 
 
-def fight(mobA,mobB): #Temporary proof-of-concept function
-    helper = [mobA, mobB]
+def damage_check(mob_a, part_d):
+    damage_roll = random.randint(1, 20)
+    endurance_roll = random.randint(1, 20)
+    dmg = ((damage_roll/10)*mob_a.strength)/endurance_roll
+    part_d.setHP(part_d.hp-dmg)
+    print(mob_a.name+" deals "+str(dmg)+" damage!")
+
+# TODO: refine the formula to take into account aiming to a certain body part
+# TODO: or making certain body parts non-targetable
+
+
+def attack_check(mob_a, mob_d):
+    # Chooses a random part from the list of all parts to target
+    return mob_d.parts[random.randint(0, len(mob_d.parts)-1)]
+
+
+def fight(mob_a, mob_b):  # Temporary proof-of-concept function
+    helper = [mob_a, mob_b]
     attacker = helper[0]
     defender = helper[1]
-    turn = 0
-    while(mobA.alive and mobB.alive):
-        damageCheck(attacker,attackCheck(attacker, defender))
-        defender.isAlive() #quite necessary call after damagecheck
+    while mob_a.alive and mob_b.alive:
+        damage_check(attacker, attack_check(attacker, defender))
+        defender.isAlive()  # quite necessary call after damagecheck
         helper[0] = defender
         helper[1] = attacker
         attacker = helper[0]
         defender = helper[1]
         pass
-    if(mobA.alive):
-        print(mobA.name +" won!")
+    if mob_a.alive:
+        print(mob_a.name + " won!")
     else:
-        print("mobB won!")
-pass
+        print("mob_b won!")
 
-def initialAttacker(mobA,mobB):
-    if(mobA.dexterity > mobB.dexterity):
-        return mobA
-    elif(mobA.dexterity < mobB.dexterity):
-        return mobB
+
+def initial_attacker(mob_a, mob_b):
+    if mob_a.dexterity > mob_b.dexterity:
+        return mob_a
+    elif mob_a.dexterity < mob_b.dexterity:
+        return mob_b
     else:
-        helper = random.randint(0,1)
+        helper = random.randint(0, 1)
         if helper == 0:
-            return mobA
+            return mob_a
         else:
-            return mobB
+            return mob_b
         pass
     pass
 pass
 
-fight(Hero,Slime) #demonstrates a fight between a Humanoid and a Slime
+fight(Hero, Slime)  # demonstrates a fight between a Humanoid and a Slime

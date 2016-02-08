@@ -1,71 +1,79 @@
-class BodyPart: #The Emperor of all bodyparts
+class BodyPart:  # The Emperor of all bodyparts
     def __init__(self):
-        self.hp = 1 #Initializes an object variable
+        self.hp = 1  # Initializes an object variable
         pass
-    def setHP(part, hp):
+
+    def set_hp(part, hp):
         part.hp = hp
 
 
-class vitalBodyPart(BodyPart): #The King of all bodyparts
+class VitalBodyPart(BodyPart):  # The King of all bodyparts
     def __init__(self):
         self.hp = 1
         self.alive = True
-        super(vitalBodyPart,self).__init__() #Ask Senso wtf is going on
+        super(VitalBodyPart, self).__init__()  # Ask Senso wtf is going on
     pass
-    def setHP(part, hp):
+
+    def set_hp(part, hp):
         part.hp = hp
-        if(hp <= 0):
+        if hp <= 0:
             part.die()
         pass
     pass
+
     def die(self):
         self.alive = False
     pass
-    def isAlive(self):
+
+    def is_alive(self):
         return self.alive
     pass
 
 
-
-
-class Head(vitalBodyPart): #A Duke of all bodyparts
+class Head(VitalBodyPart):  # A Duke of all bodyparts
     def __init__(self):
         self.hp = 1
-        super(Head,self).__init__()
-        Head.setHP(self, 30) #Calls BodyPart's setHP and sets Head's HP to be 30
+        super(Head, self).__init__()
+        # Calls BodyPart's set_hp and sets Head's HP to be 30
+        Head.set_hp(self, 30)
     pass
 
 
-class Torso(vitalBodyPart):
+class Torso(VitalBodyPart):
     def __init__(self):
         self.hp = 1
         super(Torso, self).__init__()
-        Torso.setHP(self, 100)
+        Torso.set_hp(self, 100)
     pass
+
 
 class Limb(BodyPart):
     def __init__(self):
         self.hp = 1
         super(Limb, self).__init__()
-        Limb.setHP(self, 40)
+        Limb.set_hp(self, 40)
     pass
 
 
-class Body():
+class Body:
     def __init__(self):
         self.parts = []
         self.name = ""
         pass
-    def isAlive(self): #Checks all vital bodyparts in a creature. If one of them is dead, body dies
+
+    # Checks all vital bodyparts in a creature.
+    # If one of them is dead, body dies
+    def is_alive(self):
         for part in self.parts:
-            if isinstance(part, vitalBodyPart): #Checks if a part is a vital body part and if so moves into the next block
-                if part.isAlive() == False :
+            # Checks if a part is a vital body part and if so moves into the
+            # next block
+            if isinstance(part, VitalBodyPart):
+                if not part.is_alive():
                     self.alive = False
                 pass
             pass
         pass
     pass
-
 
 
 class SlimeBody(Body):
@@ -74,6 +82,7 @@ class SlimeBody(Body):
     dexterity = 2
     luck = 2
     alive = True
+
     def __init__(self, name):
         super(SlimeBody, self).__init__()
         self.head = Head()
@@ -82,31 +91,32 @@ class SlimeBody(Body):
         self.name = name
     pass
 
+
 class HumanoidBody(Body):
     endurance = 8
     strength = 8
     dexterity = 8
     luck = 8
     alive = True
+
     def __init__(self, name):
-        super(HumanoidBody, self).__init__() #Order of supers has effect on self.parts: Body class has parts list but it is empty
+        # Order of supers has effect on self.parts:
+        # Body class has parts list but it is empty
+        super(HumanoidBody, self).__init__()
         self.head = Head()
         self.torso = Torso()
         self.rArm = Limb()
         self.lArm = Limb()
         self.rLeg = Limb()
         self.lLeg = Limb()
-        self.parts = [self.head, self.torso, self.rArm, self.lArm, self.rLeg, self.lLeg]
+        self.parts = [self.head, self.torso, self.rArm, self.lArm,
+                      self.rLeg, self.lLeg]
         self.name = name
     pass
 
 
-
-#x = SlimeBody()
-#x.head.setHP(0)
-#x.isAlive()
-#print(x.alive)
-#print(x.head.alive)
-
-
-
+# x = SlimeBody()
+# x.head.set_hp(0)
+# x.isAlive()
+# print(x.alive)
+# print(x.head.alive)
