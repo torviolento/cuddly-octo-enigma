@@ -2,6 +2,7 @@
 #
 #
 
+# Import required modules
 import msvcrt
 
 
@@ -53,4 +54,5 @@ def main():
     input_.input_handler()
 
 
-main()
+if __name__ == '__main__':
+    main()
