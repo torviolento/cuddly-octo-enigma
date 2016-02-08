@@ -10,11 +10,25 @@ class Input:
         pass
 
     def input_handler(self):
-        commands = {"A": lambda: print("aa"), "B": lambda: print("bee")}
+        commands = {"c": lambda: print("character"),
+                    "d": lambda: print("drop"),
+                    "e": lambda: print("eat / drink"),
+                    "f": lambda: print("fire"),
+                    "i": lambda: print("inventory"),
+                    "l": lambda: print("look around"),
+                    "p": lambda: print("pick up"),
+                    "r": lambda: print("remove from container / unequip"),
+                    "S": lambda: print("sleep"),
+                    "t": lambda: print("throw"),
+                    "w": lambda: print("wear"),
+                    "0": lambda: print("wait / defend"),
+                    "5": lambda: print("select"),
+                    " ": lambda: print("interact")}
+
         while True:
-            prompt = ord(msvcrt.getwch().upper())
+            prompt = ord(msvcrt.getwch())
             print(prompt)
-            if prompt in range(49, 58):
+            if prompt in range(49, 53) or prompt in range(54, 58):
                 self.move(prompt - 48)
             elif chr(prompt) in commands:
                 commands[chr(prompt)]()
@@ -35,8 +49,8 @@ class Output:
 
 def main():
     print("Start\n")
-    input = Input()
-    input.input_handler()
+    input_ = Input()
+    input_.input_handler()
 
 
 main()
