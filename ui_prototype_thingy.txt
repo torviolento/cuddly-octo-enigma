@@ -32,9 +32,9 @@
                                                                                                                                                                                    | WT   35/61
                                                                                                                                                                                    | gold 129
                                                                                                                                                                                    | 
-                                                                                                                                                                                   | endurance   13
-                                                                                                                                                                                   | strength    12
-                                                                                                                                                                                   | dexterity   9
+                                                                                                                                                                                   | endurance   14
+                                                                                                                                                                                   | strength    13
+                                                                                                                                                                                   | dexterity   10
                                                                                                                                                                                    | wisdom      3
                                                                                                                                                                                    | mind        3
                                                                                                                                                                                    | charisma    8 

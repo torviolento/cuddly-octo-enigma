@@ -4,6 +4,7 @@
 
 # Import required modules
 import msvcrt
+import unicurses
 import BodyParts
 import Combat
 
