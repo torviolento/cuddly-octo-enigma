@@ -1,12 +1,11 @@
-#
-#
-#
-
-# Import required modules
-import msvcrt
-import unicurses
+import curses
 import BodyParts
 import Combat
+
+stdscr = curses.initscr()
+curses.noecho()
+curses.cbreak()
+stdscr.keypad(True)
 
 
 class Input:
@@ -30,8 +29,8 @@ class Input:
                     " ": lambda: print("interact")}
 
         while True:
-            prompt = ord(msvcrt.getwch())
-            print(prompt)
+            prompt = stdscr.getch()
+            print("prompt: {:}".format(chr(prompt)))
             if prompt in range(49, 53) or prompt in range(54, 58):
                 self.move(prompt - 48)
             elif chr(prompt) in commands:
