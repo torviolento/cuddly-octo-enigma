@@ -1,9 +1,9 @@
-import BodyParts
+import Creature
 import random
 
 
-Slime = BodyParts.SlimeBody("Slime")
-Hero = BodyParts.HumanoidBody("Hero")
+Slime = Creature.SlimeBody("Slime")
+Hero = Creature.HumanoidBody("Hero")
 
 # TODO: refine the formula for dmg, add luck as positive random factor
 
