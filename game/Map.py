@@ -1,5 +1,6 @@
 from Util import *
 
+
 class Map:
     def __init__(self):
         # self.mobs = []
