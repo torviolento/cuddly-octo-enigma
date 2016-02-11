@@ -1,9 +1,9 @@
-import InputOutput
+import IO
 
 
 def main():
     print("Start\n")
-    input_ = InputOutput.Input()
+    input_ = IO.Input()
     input_.input_handler()
 
 

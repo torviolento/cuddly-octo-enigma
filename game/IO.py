@@ -12,25 +12,37 @@ class Input:
 
     def input_handler(self):
         commands = {"c": lambda: print("character"),
+                    "C": lambda: print("close"),
                     "d": lambda: print("drop"),
-                    "e": lambda: print("eat / drink"),
+                    "e": lambda: print("eat"),
                     "f": lambda: print("fire"),
+                    "g": lambda: print("get"),
+                    "h": lambda: print("help"),  # huono
                     "i": lambda: print("inventory"),
-                    "l": lambda: print("look around"),
-                    "p": lambda: print("pick up"),
+                    "L": lambda: print("look around"),
+                    "o": lambda: print("open"),
+                    "q": lambda: print("quaff(drink)"),
                     "r": lambda: print("remove from container / unequip"),
+                    "R": lambda: print("read"),
                     "S": lambda: print("sleep"),
                     "t": lambda: print("throw"),
                     "w": lambda: print("wear"),
+                    "x": lambda: print("examine"),
                     "0": lambda: print("wait / defend"),
                     "5": lambda: print("select"),
-                    " ": lambda: print("interact")}
+                    "<": lambda: print("descend"),
+                    ">": lambda: print("ascend"),
+                    " ": lambda: print("interact"),
+                    "*": lambda: print("change directional mode")}
 
         while True:
             prompt_as_int = stdscr.getch()
-            prompt_as_char = chr(prompt_as_int).encode\
-                ("cp1252", "replace").decode("cp1252", "replace")
-            print("prompt: {:}".format(prompt_as_char))
+            print(prompt_as_int)
+            prompt_as_char = chr(prompt_as_int)
+            try:
+                print("prompt: {:}".format(prompt_as_char))
+            except:
+                print("non-printable character")
             if prompt_as_int in range(49, 53) \
                     or prompt_as_int in range(54, 58):
                 self.move(prompt_as_int - 48)
