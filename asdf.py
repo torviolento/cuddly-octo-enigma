@@ -1,5 +1,11 @@
-class Self:
-    def __init__(self):
-        self.self =self
-self = Self()
-print (exec("self" +".self" *10000))
+list = []
+for i in range (0,1000):
+	try:
+		chr(i)
+	except:
+		list.append(i)
+
+for l in list:
+	print l,
+		
+	
