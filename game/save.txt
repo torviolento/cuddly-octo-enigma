@@ -1,0 +1,8 @@
+// Character save file
+//
+// level
+// stats
+// effects
+// hp/max
+// exp
+// items [equipped]/[inventory]

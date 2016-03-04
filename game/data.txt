@@ -1,0 +1,22 @@
+// Datafile  (maybe something like this?)
+
+
+// Tiles
+//
+// name
+// icon
+// type
+
+player
+@
+creature
+
+wall
+#
+terrain
+
+floor
+.
+terrain
+
+

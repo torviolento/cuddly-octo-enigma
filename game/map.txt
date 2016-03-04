@@ -1,0 +1,1 @@
+// Map save file (Packed with algorithm X)
