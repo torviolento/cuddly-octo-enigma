@@ -1,10 +1,9 @@
-// Datafile  (maybe something like this?)
-
+// Datafile  (maybe something like this?)[needs a lot of thinking and changing]
 
 // Tiles
 //
 // name
-// icon
+// glyph
 // type
 
 player
@@ -20,3 +19,21 @@ floor
 terrain
 
 
+// Creatures
+//
+// name
+// glyph
+// type
+// level
+// stats
+// hp
+
+
+
+// Items
+//
+// name
+// glyph
+// type
+// level
+// stats

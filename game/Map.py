@@ -6,6 +6,10 @@ class Map:
         # self.mobs = []
         pass
 
+    def generate(self):
+        # Generate the map
+        pass
+
     def populate(self):
         n_monsters = 0
         n_items = 0

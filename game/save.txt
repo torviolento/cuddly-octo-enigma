@@ -1,5 +1,6 @@
 // Character save file
 //
+// name
 // level
 // stats
 // effects
