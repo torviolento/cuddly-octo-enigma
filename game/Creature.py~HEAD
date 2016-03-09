@@ -2,30 +2,29 @@ import Util
 
 
 class Creature:
-    x, y = None, None
-    name = ""
-    glyph = ""
-    speed = 0
-    max_hp = 0
-    hp = 0
-    max_mp = 0
-    mp = 0
-    regen = 0
-    armor = 0
-    level = 0
-    endurance = 0
-    strength = 0
-    dexterity = 0
-    wisdom = 0
-    mind = 0
-    charisma = 0
-    luck = 0
-    effects = []
-    items = []
-    fov_range = 0
-    alive = True
-
     def __init__(self):
+        self.x, self.y = None, None
+        self.name = ""
+        self.glyph = ""
+        self.speed = 0
+        self.max_hp = 0
+        self.hp = 0
+        self.max_mp = 0
+        self.mp = 0
+        self.regen = 0
+        self.armor = 0
+        self.level = 0
+        self.endurance = 0
+        self.strength = 0
+        self.dexterity = 0
+        self.wisdom = 0
+        self.mind = 0
+        self.charisma = 0
+        self.luck = 0
+        self.effects = []
+        self.items = []
+        self.fov_range = 0
+        self.alive = True
         self.parts = []
 
     # Checks all vital body parts in a creature.

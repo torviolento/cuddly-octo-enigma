@@ -1,8 +1,17 @@
 class Item(object):
+<<<<<<< HEAD
     def __init__(self):
         ALL = []
         glyph = ""
         slot = None
+=======
+    ALL = []
+    glyph = ""
+    slot = None
+
+    def __init__(self):
+        pass
+>>>>>>> a921787b9a5497f315d654b3e32b5f3ce98e7bcc
 
     def on_equip(self):
         pass
